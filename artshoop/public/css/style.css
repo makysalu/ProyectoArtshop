@@ -1,3 +1,6 @@
+body{
+    background: rgb(252, 247, 244);
+}
 body>section {
     position: relative;
     /*margin-left: 20%;*/
@@ -5,7 +8,6 @@ body>section {
 	background: rgb(252, 247, 244);
 	/*width: 60%;
 	box-shadow: 0 0 10px rgba(10, 10, 10, 0.342);*/
-	height: 1000px;
 }
 
 #imgportada{

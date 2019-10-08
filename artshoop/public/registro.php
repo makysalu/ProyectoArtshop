@@ -14,11 +14,11 @@
     </head>
     <body>
         <?php include "./assets/header.php";?>
-        <section id="registro">
+        <section id="opcionRegistro">
             <header>
                     Elige tu Perfil
             </header>
-            <section>
+            <div id="opciones">
                 <article>
                     <p>
                         <h1>Usuario</h1>
@@ -37,7 +37,7 @@
                         <span>ELIGE ESTA OPCION</span>
                     </div>
                 </article>
-            </section>
+            </div>
         </section>
     </body>
 </html>
