@@ -13,10 +13,10 @@
 </head>
 <body>
     <?php include "./assets/header.php"; ?>
-    <!--<figure id="imgportada">
-        <img src="img/pintura.jpg" alt="">
-    </figure>-->
-    <section>
+    <section id="imgportada">
+        <span>Visitar Galeria</span>
+    </section>
+    <section id="index">
         <h1>body</h1>
     </section>
 </body>

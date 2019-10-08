@@ -1,23 +1,42 @@
+body>section {
+    position: relative;
+    /*margin-left: 20%;*/
+    margin-top: 134px;
+	background: rgb(252, 247, 244);
+	/*width: 60%;
+	box-shadow: 0 0 10px rgba(10, 10, 10, 0.342);*/
+	height: 1000px;
+}
+
 #imgportada{
-    position: absolute;
-    background: red;
+    position: relative;
+    background: url(../img/pintura.jpg);
+    background-size: cover;
     width: 100%;
     height: 300px;
     margin: 0;
-    margin-top: 110px;
+    margin-top: 133px;
 }
-#imgportada>img{
+#imgportada>span{
     position: relative;
-    width: 100%;
-    height: 100%;
-    opacity: 4;
+    float: left;
+    text-align: center;
+    background: transparent;
+    border: double 5px white;
+    font-size: 1.5em;
+    color: white;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 46%;
+    margin-top: 120px;
 }
-body>section {
-    position: absolute;
-    margin-left: 20%;
-    margin-top: 132px;
-	background: #F8EEE7;
-	width: 60%;
-	box-shadow: 0 0 10px rgba(10, 10, 10, 0.342);
-	height: 1000px;
+#imgportada>span:hover{
+    background: whitesmoke;
+    border: double 5px rgb(75, 24, 143);
+    color: rgb(75, 24, 143);
+}
+
+#index{
+    margin-top: -20px;
 }

@@ -1,17 +1,17 @@
-<header>
+<header id="cabecera">
     <span>
         <figure>
             <img id="logo" src="img/logo.png">
         </figure>
     </span>
     <span>
-        <h1>ArtShop</h1>
+        <h1><a href="index.php">ArtShop</a></h1>
     </span>
     <nav>
         <ul>
             <li>Ayuda</li>
             <li>Contatenos</li>
-            <li>Registrarse</li>
+            <li><a href="registro.php">Registrarse</a></li>
             <li>Acceder</li>
         </ul>
     </nav>
