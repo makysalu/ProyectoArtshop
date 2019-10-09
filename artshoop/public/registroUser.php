@@ -2,22 +2,32 @@
   session_start();
 require "./../src/BBDD.php";
 require "./../src/Usuario.php";
-$error=true;
+$error;
 $u = new Usuario();
-$error=$u->comprobarCampos($_POST);
-if (isset($error)) {
-    echo "Conexion";
- if($error===false){
-   $error=$u->conexion();
-   if ($error==false){
-       echo "Conexion";
-         /* $error=$u->insertarusuario($_POST);
-          $u->añadirFoto();
-          if ($error==false){
-              header("Location:login.php");
-          }*/
-   }
- }
+if (isset($_POST["enviar"])){
+    $error=$u->comprobarCampos($_POST);
+    /*if (isset($error)) {
+        echo "Conexion";
+    if($error===false){
+    $error=$u->conexion();
+    if ($error==false){
+        echo "Conexion";
+            /* $error=$u->insertarusuario($_POST);
+            $u->añadirFoto();
+            if ($error==false){
+                header("Location:login.php");
+            }
+    }
+    }
+    }*/
+}
+function comprobarCampos($post){
+    //echo "hola";
+    foreach ($post as $key => $value) {
+        $campos[$key]=$value;
+    }
+    var_dump($campos);
+    return $campos;
 }
 
 if (isset($_GET["msg"])){
@@ -57,7 +67,7 @@ if (isset($_GET["msg"])){
                     Aceptas las <a href="condiciones.html">condiciones</a> de servicio.
                 </p>
                 <div>
-                    <input type="submit" value="ENVIAR">
+                    <input type="submit" value="ENVIAR" name='enviar'>
                 </div>
                 </form>
             </article>

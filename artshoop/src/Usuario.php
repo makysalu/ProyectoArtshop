@@ -1,13 +1,23 @@
 <?php
 class Usuario{
-
-}
-
-function comprobarCampos($_POST){
-    $campos[]=;
-    foreach ($_POST as $key => $value) {
-        $campos[$key]=$value;
+    function comprobarCampos($post){
+        $errores=array();
+        foreach ($post as $key => $value) {  
+            if(empty($_POST[$key])==true){
+                array_push($errores,$key);
+            }
+            else{
+                $campos[$key]=htmlentities($value);
+            }
+        }
+        if(count($errores)==0){
+            return true;
+        } 
+        else{
+            return false;
+        }
+        
     }
-    var_dump($campos);
-    return true;
+    
 }
+
