@@ -1,3 +1,29 @@
+<?php
+  session_start();
+require "./../src/BBDD.php";
+require "./../src/Usuario.php";
+$error=true;
+$u = new Usuario();
+$error=$u->comprobarCampos($_POST);
+if (isset($error)) {
+    echo "Conexion";
+ if($error===false){
+   $error=$u->conexion();
+   if ($error==false){
+       echo "Conexion";
+         /* $error=$u->insertarusuario($_POST);
+          $u->añadirFoto();
+          if ($error==false){
+              header("Location:login.php");
+          }*/
+   }
+ }
+}
+
+if (isset($_GET["msg"])){
+  echo "<script>alert('".$_GET["msg"]."');</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +39,7 @@
         <link rel="stylesheet" href="./css/registro.css">
     </head>
     <body>
-        <?php include "./assets/header.php";?>
+        <?php //include "./assets/header.php";?>
         <section id="registro">
             <header>
                     Registro Usuario
