@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="./css/header.css">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/registro.css">
-        <script src="./js/registro.js"></script>
     </head>
     <body>
         <?php include "./assets/header.php";?>
