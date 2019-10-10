@@ -6,28 +6,18 @@ $error;
 $u = new Usuario();
 if (isset($_POST["enviar"])){
     $error=$u->comprobarCampos($_POST);
-    /*if (isset($error)) {
-        echo "Conexion";
-    if($error===false){
-    $error=$u->conexion();
-    if ($error==false){
-        echo "Conexion";
-            /* $error=$u->insertarusuario($_POST);
-            $u->añadirFoto();
-            if ($error==false){
-                header("Location:login.php");
-            }
+    if (isset($error)) {
+        if($error===true){
+        $error=$u->conexion();
+        if ($error===true){
+            $error=$u->insertarusuario($_POST);
+                /*$u->añadirFoto();
+                if ($error==false){
+                    header("Location:login.php");
+                }*/
+        }
+        }
     }
-    }
-    }*/
-}
-function comprobarCampos($post){
-    //echo "hola";
-    foreach ($post as $key => $value) {
-        $campos[$key]=$value;
-    }
-    var_dump($campos);
-    return $campos;
 }
 
 if (isset($_GET["msg"])){
@@ -49,15 +39,16 @@ if (isset($_GET["msg"])){
         <link rel="stylesheet" href="./css/registro.css">
     </head>
     <body>
-        <?php //include "./assets/header.php";?>
+        <?php include "./assets/header.php";?>
         <section id="registro">
             <header>
                     Registro Usuario
             </header>
             <article>
-                <form class="registroUser" action="registroUser.php" method="post">
+                <form id="registro" class="registroUser" action="registroUser.php" method="post" enctype="multipart/form-data" onsubmit="return comprobarRegistro()">
                 <label for="Nombre"><strong>Nombre: </strong></label><input type="text" name="Nombre"><br></br>
-                <label for="Apellidos"><strong>Apellidos </strong></label><input type="text" name="Apellidos"><br></br>
+                <label for="Apellidos"><strong>Apellidos: </strong></label><input type="text" name="Apellidos"><br></br>
+                <label for="DNI"><strong>DNI: </strong></label><input type="text" name="DNI"><br></br>
                 <label for="Pais"><strong>País: </strong></label><input type="text" name="Pais"><br></br>
                 <label for="Email"><strong>Email: </strong></label><input type="text" name="Email"><br></br>
                 <label for="Password"><strong>Contraseña: </strong></label><input type="text" name="Password"><br></br>
