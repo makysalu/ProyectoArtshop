@@ -1,14 +1,13 @@
+var opcionregistro=0;
+console.log(opcionregistro);
 function comprobarRegistro(form){
-    var estado=true;
     errores=comprobarCampos(form);
     if(errores.length==0){
         estado=comprobarContraseña();
-        return estado;
+        return true;
     }
     else{
-        console.log(errores);
-        
-        return estado;
+        return false;
     } 
 }
 

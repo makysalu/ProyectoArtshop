@@ -10,11 +10,6 @@ class Usuario extends BBDD{
             if(empty($_POST[$key])==true){
                 array_push($errores,$key);
             }
-            else{
-                if(($key!="enviar")&&($key!="Condiciones")){
-                    $this->datos[$key]=htmlentities($value);
-                }
-            }
         }
         if(count($errores)==0){
             return true;
@@ -24,6 +19,17 @@ class Usuario extends BBDD{
         }
         
     }
+
+    /* Limpiar datos*/
+    public function limpiardatos($post){
+        foreach ($post as $key => $value) {  
+            if(($key!="enviar")&&($key!="Condiciones")){
+                $this->datos[$key]=htmlentities($value);
+            }
+        }
+        return $this->datos;
+    }
+
      /* datos usuario */
     function setId_Afiliado($datos){
         $this->datos=$datos;
