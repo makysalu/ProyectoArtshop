@@ -37,15 +37,29 @@ class Usuario extends BBDD{
     function getId_Afiliado(){
         return $this->datos;
     }
+    public function comprobarCorreo($post){
+        $consulta="select * from usuario where usuario.Email='".$post['Email']."'";
+        $resultado=$this->conexion->query($consulta);
+        foreach ($resultado as $usuario) {
+            $usuario['Id_usuario'];
+        }
+        if(empty($usuario['Id_usuario'])){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
-    public function insertarusuario(){
+    /* Introducir Usuarios*/
+    public function insertarusuario($post){
         $claves="";
         $valores="";
         $cont=1;
-        foreach ($this->datos as $key => $value) {
+        foreach ($post as $key => $value) {
             $claves.=$key;
              $valores.="'".$value."'";
-            if($cont<count($this->datos)){
+            if($cont<count($post)){
                 $claves.=", ";
                 $valores.=", ";
             }
@@ -53,7 +67,6 @@ class Usuario extends BBDD{
         }
         $consulta="insert into usuario (".$claves.") values (".$valores.")";
         $this->conexion->query($consulta);
-        echo $consulta;
         return true;
     }
     
