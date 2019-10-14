@@ -18,12 +18,12 @@ if (empty($_GET)){
                     include "./assets/header.php";
                     include "./assets/SelecionRegistro.php";
                     require "./assets/cierreHTML.php";
-                    $opcionregistro = "<script> document.write(opcionregistro) </script>";
+                    //$opcionregistro = "<script> document.write(opcionregistro) </script>";
                 }
                 else{
                     require "./assets/inicioHTML.php";
                     include "./assets/header.php";
-                    include " ./assets/msgCuenta.php";
+                    include "./assets/msgCuenta.php";
                     include "./assets/registro.php";
                     require "./assets/cierreHTML.php";
                 }
