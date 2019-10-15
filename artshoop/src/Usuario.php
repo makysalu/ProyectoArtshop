@@ -1,8 +1,13 @@
 <?php
 class Usuario extends BBDD{
-    public $accion;
-    private $datos=array();
-
+    public $Id_usuario;
+    private $Nombre;
+    private $Apellidos;
+    private $Pais;
+    private $Email;
+    private $Password;
+    //public $datos=array($this->Id_usuario,$this->Nombre,$this->Apellidos,$this->Pais,$this->Email,$this->Password);
+    public $datos=array();
     /* Comprobar campos */
     public function comprobarCampos($post){
         $errores=array();
@@ -24,6 +29,7 @@ class Usuario extends BBDD{
     public function limpiardatos($post){
         foreach ($post as $key => $value) {  
             if(($key!="enviar")&&($key!="Condiciones")){
+                $this->$key=htmlentities($value);
                 $this->datos[$key]=htmlentities($value);
             }
         }
@@ -31,12 +37,22 @@ class Usuario extends BBDD{
     }
 
      /* datos usuario */
-    function setId_Afiliado($datos){
+    
+    /*function setId_Afiliado($datos){
         $this->datos=$datos;
     }
     function getId_Afiliado(){
         return $this->datos;
+    }*/
+    
+    public function SacarId_user($email){
+        $consulta="select * from usuario where usuario.Email='".$email."'";
+        $resultado=$this->conexion->query($consulta);
+        foreach ($resultado as $usuario) {
+            $this->Id_usuario=$usuario['Id_usuario'];
+        }
     }
+
     public function comprobarCorreo($post){
         $consulta="select * from usuario where usuario.Email='".$post['Email']."'";
         $resultado=$this->conexion->query($consulta);

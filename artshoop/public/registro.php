@@ -2,8 +2,10 @@
 session_start();
 require "./../src/BBDD.php";
 require "./../src/Usuario.php";
+require "./../src/Artista.php";
 $error;
 $u = new Usuario();
+$a = new Artista();
 if (empty($_GET)){
     if (isset($_POST["enviar"])){
         $error=$u->comprobarCampos($_POST);
@@ -36,17 +38,39 @@ if (empty($_GET)){
         }
         
     }
+    else{
+        require "./assets/inicioHTML.php";
+        include "./assets/header.php";
+        include "./assets/registro.php";
+        require "./assets/cierreHTML.php"; 
+    }
 }
-else
-{   
+else{   
     $datos=$_SESSION;
-    $error=$u->conexion();
-    if ($error===true){
-        $error=$u->insertarusuario($_SESSION);
+    var_dump($datos);
+    if($_GET["opcion"]=="usuario"){
+        $error=$u->conexion();
+        if ($error===true){
+            $error=$u->insertarusuario($datos);
             if ($error===true){
                 header("Location:index.php");
             }
+        }
     }
+    if($_GET["opcion"]=="artista"){
+        $error=$u->conexion();
+        if ($error===true){
+            $error=$u->insertarusuario($datos);
+            if ($error===true){
+                $u->SacarId_user($_SESSION['Email']);
+                $a->conexion();
+                $a->insertarartista($u->Id_usuario);
+                header("Location:index.php");
+            }
+            
+        }
+    }
+    
 }
 
 ?>

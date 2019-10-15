@@ -10,7 +10,7 @@
                         Soy un Amante del arte, estoy interesado en comprar y disfrutar del arte. 
                     </p>
                     <div>
-                        <a href=registro.php?opcion="usuario"><span>ELIGE ESTA OPCION</span></a>
+                        <a href=registro.php?opcion=usuario><span>ELIGE ESTA OPCION</span></a>
                     </div>
                 </article>
                 <article>
@@ -19,7 +19,7 @@
                         Soy artista, estoy interesado en exponer y/o vender arte a través de Artshop.
                     </p>
                     <div>
-                        <a href=registro.php?opcion="artista"><span>ELIGE ESTA OPCION</span></a>
+                        <a href=registro.php?opcion=artista><span>ELIGE ESTA OPCION</span></a>
                     </div>
                 </article>
             </div>
