@@ -34,3 +34,40 @@ body{
 #index{
     /*margin-top: -20px;*/
 }
+
+#login{
+    margin-top: -50px;
+    right: 0;
+    margin-right: 5px;
+    position: absolute;
+    float: right;
+    width: 300px;
+    background-color: white;
+    z-index: 10;
+    box-sizing: border-box;
+    border: 2px solid #a1a1a1;
+}
+
+#login dt{
+    padding: 15px;
+    border-bottom: 1px solid #cecccc;
+    text-align: center;
+    font-size: 1.25em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#login dd{
+    padding-bottom: 20px;
+}
+
+#login dd input{
+    width: 80%;
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#login dd input[type="submit"]{
+    background-color: hsla(300, 41%, 50%, 0.824);
+}
