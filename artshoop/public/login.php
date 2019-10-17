@@ -1,16 +1,5 @@
 
-        <!--<div id="login">
-            <dt>
-                INICIAR SESION
-            </dt>
-            <Dd>
-                <form action="" method="post">
-                    <input type="text" placeholder=" Email"/>
-                    <input type="text" placeholder=" Constraseña"/>
-                    <input type="submit" value="Iniciar Sesion"/>
-                </form>
-            </Dd>
-        </div>-->
+       
   <?php 
         require "./assets/inicioHTML.php";
         include "./assets/header.php";
@@ -46,6 +35,18 @@
     
 }
         </script>
+         <div id="login">
+            <dt>
+                INICIAR SESION
+            </dt>
+            <Dd>
+                <form action="" method="post">
+                    <input type="text" placeholder=" Email"/>
+                    <input type="text" placeholder=" Constraseña"/>
+                    <input type="submit" value="Iniciar Sesion"/>
+                </form>
+            </Dd>
+        </div>
     <?php    
         require "./assets/cierreHTML.php";
     ?>
